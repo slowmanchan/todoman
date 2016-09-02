@@ -1,0 +1,11 @@
+<div class="nav-bar">
+  <% if user_signed_in? %>
+    <%= link_to "profile" %>
+    <%= link_to "todos" %>
+    <%= link_to "log out", destroy_user_session_path, method: :delete %>
+    Signed in as: <%= current_user.email %>
+  <% else %>
+    <%= link_to "sign in" %>
+
+  <% end %>
+</div>
