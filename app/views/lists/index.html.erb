@@ -1,0 +1,25 @@
+<div class="wrapper">
+ <div class="container">
+
+    <div class="main-heading">
+      <h1>ToDo</h1>
+      <div class="hr">
+        <hr>
+      </div>
+    </div>
+    <div class="add-item">
+      <%= link_to "add item", new_list_path %>
+    </div>
+    <div class="todo-list">
+      <ul>
+      <% @lists.each do |list| %>
+        <li>
+          <%= list.name %>
+          <%= link_to "Delete", list, method: :delete %>
+          <%= link_to "Edit", edit_list_path(list) %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,20 @@
-<div class="nav-bar">
-  <% if user_signed_in? %>
-    <%= link_to "profile" %>
-    <%= link_to "todos" %>
-    <%= link_to "log out", destroy_user_session_path, method: :delete %>
-    Signed in as: <%= current_user.email %>
-  <% else %>
-    <%= link_to "sign in" %>
-
-  <% end %>
+<div class="container">
+  <div class="logo">
+    <h1>ToDo Man</h1>
+  </div>
+  <div class="sub-heading">
+    <p>The only todo list you need</p>
+  </div>
+  <div class="nav-bar">
+    <% if user_signed_in? %>
+    <ul>
+      <li><%= link_to "profile" %></li>
+      <li><%= link_to "todos", lists_path %></li>
+      <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+      <li>Signed in as: <%= current_user.email %></li>
+    <% else %>
+      <li><%= link_to "sign in" %></li>
+    <% end %>
+   </ul>
+  </div>
 </div>
